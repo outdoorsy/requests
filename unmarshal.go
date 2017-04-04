@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/stretchr/codecs/services"
+	"github.com/tylerb/codecs/services"
 )
 
 var WrongTypeError = errors.New("The value passed to Unmarshal must be either a pointer to a struct or a pointer to a slice of structs (or struct pointers)")
