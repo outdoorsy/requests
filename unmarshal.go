@@ -221,18 +221,11 @@ func (request *Request) unmarshalMapBody(targetValue reflect.Value, paramsFunc f
 		return
 	}
 
-	matchedFields, inputErrs := unmarshalToValue(params, targetValue, replace)
+	_, inputErrs := unmarshalToValue(params, targetValue, replace)
 	if len(inputErrs) > 0 {
 		return inputErrs
 	}
 
-	unused := &UnusedFields{
-		params:  params,
-		matched: matchedFields,
-	}
-	if unused.HasMissing() {
-		return unused
-	}
 	return nil
 }
 
